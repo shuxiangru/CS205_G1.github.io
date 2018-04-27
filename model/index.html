@@ -6,6 +6,22 @@ title: model
 		<div class="model">
 			<h1>Model Details</h1>
 			<p>Describe your model and/or data in detail: where did it come from, how did you acquire it, what does it mean, etc.</p>
-      			<h1>Program Design</h1>
+      			<p>Serial Version</p>	
+				<ul style="list-style-type:disc">
+					<li>Backtracking (brute force, depth first search): 
+						search through permutations of all possibly 
+						correct answers until it reaches a solution.</li>
+					<li>Pseudocode:</li>
+					At the i-th empty cell on the board:
+						&emsp;For all possible fill-ins:
+							&emsp;&emsp;Fill the number
+							If this is the last empty cell:
+								Return the solution
+							Else:
+								Search the (i+1)-th empty cell
+						Return with no solution
+				 	
+				</ul>
+			<h1>Program Design</h1>
 			<p>Describe your program design and why you chose the features you did.</p>
 		</div>

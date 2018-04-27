@@ -9,17 +9,19 @@ title: model
       			<p>Serial Version</p>	
 				<ul style="list-style-type:disc">
 					<li>Backtracking (brute force, depth first search): 
-						search through permutations of all possibly 
-						correct answers until it reaches a solution.</li>
+						<ul style="list-style-type:disc">
+							<li>search through permutations of all possibly 
+								correct answers until it reaches a solution.</li>
+						</ul>
 					<li>Pseudocode:</li>
-					At the i-th empty cell on the board:
-						&emsp;For all possible fill-ins:
-							&emsp;&emsp;Fill the number
-							If this is the last empty cell:
-								Return the solution
-							Else:
-								Search the (i+1)-th empty cell
-						Return with no solution
+					At the i-th empty cell on the board:<br>
+					&emsp;For all possible fill-ins:<br>
+					&emsp;&emsp;Fill the number<br>
+					&emsp;&emsp;If this is the last empty cell:<br>
+					&emsp;&emsp;&emsp;Return the solution<br>
+					&emsp;&emsp;Else:<br>
+					&emsp;&emsp;&emsp;Search the (i+1)-th empty cell<br>
+					&emsp;Return with no solution<br>
 				 	
 				</ul>
 			<h1>Program Design</h1>

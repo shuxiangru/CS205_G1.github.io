@@ -12,7 +12,7 @@ nav ul, footer ul {
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
-    background-color: rgb(255,255,255)
+    /* background-color: rgb(255,255,255) */
     
 }
 a {
@@ -29,7 +29,7 @@ h1 {
 p {
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #333;
+    color: #464646;
 }
 footer {
     border-top: 1px solid #d5d5d5;

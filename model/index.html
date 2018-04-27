@@ -6,25 +6,58 @@ title: model
 		<div class="model">
 			<h1>Model Details</h1>
       			<p>Serial Version</p>	
-				<ul style="list-style-type:disc">
-					<li>Backtracking (brute force, depth first search): 
-						<ul style="list-style-type:disc">
-							<li>depth first search</li>
-							<li>search through permutations of all possibly 
-								correct answers until it reaches a solution.</li>
-						</ul>
-					<li>Pseudocode:</li>
-					At the i-th empty cell on the board:<br>
-					&emsp;For all possible fill-ins:<br>
-					&emsp;&emsp;Fill the number<br>
-					&emsp;&emsp;If this is the last empty cell:<br>
-					&emsp;&emsp;&emsp;Return the solution<br>
-					&emsp;&emsp;Else:<br>
-					&emsp;&emsp;&emsp;Search the (i+1)-th empty cell<br>
-					&emsp;Return with no solution<br>
-				 	
-				</ul>
-			
+					<ul style="list-style-type:disc">
+						<li>Backtracking (brute force, depth first search): 
+							<ul style="list-style-type:disc">
+								<li>depth first search</li>
+								<li>search through permutations of all possibly 
+									correct answers until it reaches a solution.</li>
+							</ul>
+						<li>Pseudocode</li>
+						At the i-th empty cell on the board:<br>
+						&emsp;For all possible fill-ins:<br>
+						&emsp;&emsp;Fill the number<br>
+						&emsp;&emsp;If this is the last empty cell:<br>
+						&emsp;&emsp;&emsp;Return the solution<br>
+						&emsp;&emsp;Else:<br>
+						&emsp;&emsp;&emsp;Search the (i+1)-th empty cell<br>
+						&emsp;Return with no solution<br>
+					</ul>
+				<p>Open MP Version</p>
+					<table>
+						<tr>
+							<td>
+								<ul style="list-style-type:disc">
+								  <li>Serially generate a list of incomplete solutions </li>
+								  <li>Perform backtracking algorithm in parallel by bootstrapping possible boards and adding them to a shared deque</li>
+								  <li>Use dynamic scheduling to balance work load on all threads</li>
+								</ul>
+							</td>
+							<td>
+								<img src="/CS205_G1.github.io/img/omp_chart.png" alt="omp" width="256" height="256">
+							</td>
+				 		</tr>
+					</table>
+				<p>MPI + Open MP version</p>
+					<table>
+						<tr>
+							<td>
+								<img src="/CS205_G1.github.io/img/mpi_omp.png" alt="mpi+omp" width="256" height="256">
+							</td>
+							<td>
+								<ul style="list-style-type:disc">
+								  <li>Serially generate a shorter list of incomplete solutions </li>
+								  <li>Trunk the shorter list and dispatch  to nodes.</li>
+								  	<ul style="list-style-type:disc">
+								  		<li>Each node generate a longer list of incomplete solutions based on its own chunk</li>
+								  		<li>Each node perform OMP-level parallelism to solve the puzzle</li>
+								  	</ul>
+								  <li>All nodes output the solutions to a queue of solutions to be gathered and printed out by the master node</li>
+								</ul>
+							</td>
+							
+				 		</tr>
+					</table>
 			<h1>Program Design</h1>
 			<p>Describe your program design and why you chose the features you did.</p>
 		</div>

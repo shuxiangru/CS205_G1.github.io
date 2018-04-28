@@ -7,21 +7,24 @@ title: model
 			<h1>Model Details</h1>
       			<p class="subtitle">Serial Version</p>	
 					<ul >
-						<li>Backtracking (brute force, depth first search): 
+						<li>Backtracking (brute force, depth first search): </li>
 							<ul >
 								<li>depth first search</li>
 								<li>search through permutations of all possibly 
 									correct answers until it reaches a solution.</li>
 							</ul>
 						<li>Pseudocode</li>
+						<ul><li>
 						At the i-th empty cell on the board:<br>
-						&emsp;For all possible fill-ins:<br>
-						&emsp;&emsp;Fill the number<br>
-						&emsp;&emsp;If this is the last empty cell:<br>
-						&emsp;&emsp;&emsp;Return the solution<br>
-						&emsp;&emsp;Else:<br>
-						&emsp;&emsp;&emsp;Search the (i+1)-th empty cell<br>
-						&emsp;Return with no solution<br>
+						&emsp;&emsp;For all possible fill-ins:<br>
+						&emsp;&emsp;&emsp;Fill the number<br>
+						&emsp;&emsp;&emsp;If this is the last empty cell:<br>
+						&emsp;&emsp;&emsp;&emsp;Return the solution<br>
+						&emsp;&emsp;&emsp;Else:<br>
+						&emsp;&emsp;&emsp;&emsp;Search the (i+1)-th empty cell<br>
+						&emsp;&emsp;Return with no solution<br>
+						</li></ul>
+						
 					</ul>
 				<p class="subtitle">OpenMP Version</p>
 					<table>

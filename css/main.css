@@ -11,7 +11,8 @@ nav ul, footer ul {
 }
 nav ul li, footer ul li {
     display: inline;
-    margin-right: 0px;
+    margin-right: 20px;
+    font-size: 1.2em;
     /* background-color: rgb(255,255,255) */
     
 }

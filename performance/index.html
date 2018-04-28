@@ -27,4 +27,15 @@ title: performance
 							  <li>For easier problems, the speedup is slightly lower but still impressive</li>
 							</ul>
 			<p class="subtitle">MPI + OpenMP Performance</p>
+				<img src="/CS205_G1.github.io/img/mpi_speedup.png" alt="mpi_speedup" width="80%">
+				<ul>
+					<li>The highest speedup 14.3 for 2 nodes with 8 threads, and 22.1 for 4 nodes with 8 threads</li>
+				</ul>
+			<p class="subtitle">Conclusions</p>
+				<ul>
+					<li>The serial solver guarantees to find a solution but is very slow in terms of the execution time</li>
+					<li>The main difficulty in parallelizing the Sudoku solver is balancing the workload assigned to each worker</li>
+					<li>OpenMP with Dynamic scheduling achieves sublinear to linear speedup </li>
+					<li>Current MPI implementation cannot balance workload dynamically, thus the speedup on multi-node architectures is still limited</li>
+				</ul>
   </div>

@@ -6,9 +6,9 @@ title: model
 		<div class="model">
 			<h1>Model Details</h1>
       			<p class="subtitle">Serial Version</p>	
-					<ul style="list-style-type:disc">
+					<ul >
 						<li>Backtracking (brute force, depth first search): 
-							<ul style="list-style-type:disc">
+							<ul >
 								<li>depth first search</li>
 								<li>search through permutations of all possibly 
 									correct answers until it reaches a solution.</li>
@@ -27,7 +27,7 @@ title: model
 					<table>
 						<tr>
 							<td>
-								<ul style="list-style-type:disc">
+								<ul >
 								  <li>Serially generate a list of incomplete solutions </li>
 								  <li>Perform backtracking algorithm in parallel by bootstrapping possible boards and adding them to a shared deque</li>
 								  <li>Use dynamic scheduling to balance work load on all threads</li>
@@ -45,10 +45,10 @@ title: model
 								<img src="/CS205_G1.github.io/img/mpi_omp.png" alt="mpi+omp" width="500">
 							</td>
 							<td>
-								<ul style="list-style-type:disc">
+								<ul>
 								  <li>Serially generate a shorter list of incomplete solutions </li>
 								  <li>Trunk the shorter list and dispatch  to nodes.</li>
-								  	<ul style="list-style-type:disc">
+								  	<ul >
 								  		<li>Each node generate a longer list of incomplete solutions based on its own chunk</li>
 								  		<li>Each node perform OMP-level parallelism to solve the puzzle</li>
 								  	</ul>

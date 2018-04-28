@@ -51,7 +51,7 @@ ul.posts li {
 }
 ul li {
     padding: 5px 0px;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 /* tell the container's children to float left: */
 .float_right > * {

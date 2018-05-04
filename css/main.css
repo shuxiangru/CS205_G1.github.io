@@ -1,10 +1,12 @@
 body {
     margin: 30px auto;
+    width: 80%;
 }
 
 div{
     margin-left:25%;
     padding:1px 16px;
+    width: 70%;
 }
 ul li {
     padding: 5px 0px;

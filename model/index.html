@@ -2,54 +2,71 @@
 layout: default
 title: model
 ---
+<div class='data'>
+	<h1>Data Description</h1>
+	<p> We found three 16x16 and three 25x25 Sudoku puzzles with different difficulty levels 
+		to test our software and compute speedup. All the problem are found on line. We
+		manually take out a few cells from the solution board to adjust problem difficulty.</p>
 
-		<div class="model">
-			<h1>Model Details</h1>
-      			<p class="subtitle">Serial Version</p>	
+</div>
+<div class="model">
+	<h1>Model Details</h1>
+	<p class="subtitle">Serial Version</p>	
+			<ul >
+				<li>Backtracking Algorithm </li>
 					<ul >
-						<li>Backtracking (brute force, depth first search): </li>
-							<ul >
-								<li>depth first search</li>
-								<li>search through permutations of all possibly 
-									correct answers until it reaches a solution.</li>
-							</ul>
-						<li>Pseudocode</li>
-						<ul><li>
-						At the i-th empty cell on the board:<br>
-						&emsp;&emsp;For all possible fill-ins:<br>
-						&emsp;&emsp;&emsp;Fill the number<br>
-						&emsp;&emsp;&emsp;If this is the last empty cell:<br>
-						&emsp;&emsp;&emsp;&emsp;Return the solution<br>
-						&emsp;&emsp;&emsp;Else:<br>
-						&emsp;&emsp;&emsp;&emsp;Search the (i+1)-th empty cell<br>
-						&emsp;&emsp;Return with no solution<br>
-						</li></ul>
-						
+						<li>Depth first search</li>
+						<li>Search through permutations of all possibly 
+							correct values until it reaches a solution.</li>
 					</ul>
-				<p class="subtitle">OpenMP Version</p>
-					<img src="/CS205_G1.github.io/img/omp_chart.png" alt="omp" width="600">
-					<ul >
-					  <li>Serially generate a list of incomplete solutions </li>
-					  <li>Perform backtracking algorithm in parallel by bootstrapping possible boards and adding them to a shared deque</li>
-					  <li>Use dynamic scheduling to balance work load on all threads</li>
-					</ul>
-							
-					
+				<li>Pseudocode</li>
+				<ul><li>
+				At the i-th empty cell on the board:<br>
+				&emsp;&emsp;For all possible fill-ins:<br>
+				&emsp;&emsp;&emsp;Fill the number<br>
+				&emsp;&emsp;&emsp;If this is the last empty cell:<br>
+				&emsp;&emsp;&emsp;&emsp;Return the solution<br>
+				&emsp;&emsp;&emsp;Else:<br>
+				&emsp;&emsp;&emsp;&emsp;Search the (i+1)-th empty cell<br>
+				&emsp;&emsp;Return with no solution<br>
+				</li></ul>
 
-				<p class="subtitle">MPI + OpenMP version</p>
-		
-					<img src="/CS205_G1.github.io/img/mpi_omp.png" alt="mpi+omp" width="600">
-		
-					<ul>
-					  <li>Serially generate a shorter list of incomplete solutions </li>
-					  <li>Trunk the shorter list and dispatch  to nodes.</li>
-					  	<ul >
-					  		<li>Each node generate a longer list of incomplete solutions based on its own chunk</li>
-					  		<li>Each node perform OMP-level parallelism to solve the puzzle</li>
-					  	</ul>
-					  <li>All nodes output the solutions to a queue of solutions to be gathered and printed out by the master node</li>
-					</ul>
+			</ul>
+		<p class="subtitle">OpenMP Version</p>
+			<img src="/CS205_G1.github.io/img/omp_chart.png" alt="omp" width="600">
+			<ul >
+			  <li>Serially generate a list of incomplete solutions through bootstrapping:
+				fill a few empty cells with all possible values, and generate a shared deque of
+				possible board to be solved by each thread</li>
+			  <li>Each thread solve the boards in parallel with the backtracking algorithm</li>
+			  <li>Use dynamic scheduling to balance work load on all threads: each thread
+				will pop a new board from the deque to solve when it finished solving the previous board</li>
+			</ul>
+
+
+
+		<p class="subtitle">MPI + OpenMP version</p>
+
+			<img src="/CS205_G1.github.io/img/mpi_omp.png" alt="mpi+omp" width="600">
+
+			<ul>
+			  <li>Serially generate a list of incomplete solutions </li>
+			  <li>Evenly dispatch the list of borads to nodes</li>
+				<ul >
+					<li>Each node generates a list of incomplete solutions using 
+						the same method as the OpenMP version</li>
+					<li>Each node performs OMP-level parallelism to solve the puzzle</li>
+				</ul>
+			  <li>All nodes output the solutions to a queue of solutions to be gathered and 
+				  printed out by the master node </li>
+			</ul>
 	
-			<h1>Program Design</h1>
-			<p>Describe your program design and why you chose the features you did.</p>
-		</div>
+	        <p class="subtitle">Advanced Feature</p>
+	                <ul>
+				<li>Random shuffle: shuffle the deque of boards before dispatching to each
+					node. This will make sure that the work load of each node is relatively
+					balanced, and no node waits a long time for other nodes to finish.</li>
+				<li>MPI Dynamic Scheduling</li>
+	                </ul>
+
+</div>

@@ -4,7 +4,7 @@ title: model
 ---
 <div class='data'>
 	<h1>Data Description</h1>
-	<p> We found three 16x16 and three 25x25 Sudoku puzzles with different difficulty level 
+	<p> We found three 16x16 and three 25x25 Sudoku puzzles with different difficulty levels 
 		to test our software and compute speedup. All the problem are found on line. We
 		manually take out a few cells from the solution board to adjust problem difficulty.</p>
 
@@ -63,10 +63,10 @@ title: model
 	
 	        <p class="subtitle">Advanced Feature</p>
 	                <ul>
-				<li>Random shuffle</li>
+				<li>Random shuffle: shuffle the deque of boards before dispatching to each
+					node. This will make sure that the work load of each node is relatively
+					balanced, and no node waits a long time for other nodes to finish.</li>
 				<li>MPI Dynamic Scheduling</li>
 	                </ul>
 
-	<h1>Program Design</h1>
-	<p>Describe your program design and why you chose the features you did.</p>
 </div>

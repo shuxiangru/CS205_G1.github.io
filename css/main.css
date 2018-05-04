@@ -33,6 +33,7 @@ nav ul {
     position: fixed;
     height: 100%;
     overflow: auto;
+    float: left;
 }
 
 nav li a {

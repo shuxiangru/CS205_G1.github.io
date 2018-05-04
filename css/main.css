@@ -81,6 +81,11 @@ p.subtitle{
     font-size: 3em;
 }
 
+p.plot_title{
+    font-family: Tahoma;
+    font-size: 2em;
+}
+
 footer {
     margin-left:25%;
     border-top: 1px solid #d5d5d5;

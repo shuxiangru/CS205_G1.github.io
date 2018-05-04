@@ -9,15 +9,7 @@ div{
     /*width: 70%;*/
 }
 
-div.footer{
-    position: fixed;
-   left: 0;
-   bottom: 0;
-   font-size: 1.2em;
-   width: 100%;
-   color: white;
-   text-align: center;
-}
+
 
 ul li {
     padding: 5px 0px;
@@ -126,4 +118,13 @@ footer ul li {
 
 .clearfix:after {
     clear: both;
+}
+.footer{
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   font-size: 1.2em;
+   width: 100%;
+   color: white;
+   text-align: center;
 }

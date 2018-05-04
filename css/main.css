@@ -94,6 +94,7 @@ footer {
 
 footer ul{
     align-self: center;
+    position: fixed;
 }
 
 /* tell the container's children to float left: */

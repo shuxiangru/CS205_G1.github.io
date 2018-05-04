@@ -8,6 +8,17 @@ div{
     padding:1px 16px;
     /*width: 70%;*/
 }
+
+div.footer{
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   font-size: 1.2em;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+
 ul li {
     padding: 5px 0px;
     font-size: 1.5em;
@@ -77,7 +88,7 @@ p.plot_title{
     font-size: 2em;
 }
 
-footer {
+/*footer {
     margin-left:27%;
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
@@ -94,7 +105,7 @@ footer ul li {
     font-size: 1.2em;
     /* background-color: rgb(255,255,255) */
     
-}
+}*/
 /* tell the container's children to float left: */
 .float_right > * {
     float:left;

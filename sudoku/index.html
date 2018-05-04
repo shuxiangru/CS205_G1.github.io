@@ -9,11 +9,15 @@ title: sudoku intro
 			<p class="subtitle">Simple 9 x 9 Sudoku</p>
 			<table>
 				<tr>
-					<td><ul>
-					  <li>A combinatorial number placement puzzle</li>
-					  <li>Objective of a basic sudoku: Fill a 9 × 9 grid (board) with digits so that each column,
-						  each row, and each of the nine 3×3 subgrids (boxes) contains all of the digits from 1 to 9</li>
-					</ul></td>
+					<td>
+					 <p>
+						 Sudoku is a combinatorial number placement puzzle. The objective of this game is to fill a 9×9 grid (board) with digits 
+						 so that each column, each row, and each of the nine 3×3 subgrids (boxes) contains all of the digits from 1 to 9. 
+						 Higher-rank sudokus usually have n^2*n^2 board with n*n boxes (n>3). However, higher-rank sudokus take hours to run in serial. 
+						 Thus, we aim to parallelize a sudoku solver algorithm with several parallelization techniques (OpenMP and MPI), 
+						 so that giant sudoku solver can be solved within a limited time.
+					</p>
+					</td>
 					<td><img src="/CS205_G1.github.io/img/basic_sudoku.png" alt="basic_sudoku" width="150" height="150"></td>
 
 				 </tr>

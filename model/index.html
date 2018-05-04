@@ -37,25 +37,19 @@ title: model
 					
 
 				<p class="subtitle">MPI + OpenMP version</p>
-					<table>
-						<tr>
-							<td>
-								<img src="/CS205_G1.github.io/img/mpi_omp.png" alt="mpi+omp" width="600">
-							</td>
-							<td>
-								<ul>
-								  <li>Serially generate a shorter list of incomplete solutions </li>
-								  <li>Trunk the shorter list and dispatch  to nodes.</li>
-								  	<ul >
-								  		<li>Each node generate a longer list of incomplete solutions based on its own chunk</li>
-								  		<li>Each node perform OMP-level parallelism to solve the puzzle</li>
-								  	</ul>
-								  <li>All nodes output the solutions to a queue of solutions to be gathered and printed out by the master node</li>
-								</ul>
-							</td>
-							
-				 		</tr>
-					</table>
+		
+					<img src="/CS205_G1.github.io/img/mpi_omp.png" alt="mpi+omp" width="600">
+		
+					<ul>
+					  <li>Serially generate a shorter list of incomplete solutions </li>
+					  <li>Trunk the shorter list and dispatch  to nodes.</li>
+					  	<ul >
+					  		<li>Each node generate a longer list of incomplete solutions based on its own chunk</li>
+					  		<li>Each node perform OMP-level parallelism to solve the puzzle</li>
+					  	</ul>
+					  <li>All nodes output the solutions to a queue of solutions to be gathered and printed out by the master node</li>
+					</ul>
+	
 			<h1>Program Design</h1>
 			<p>Describe your program design and why you chose the features you did.</p>
 		</div>

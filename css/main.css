@@ -12,13 +12,7 @@ ul li {
     padding: 5px 0px;
     font-size: 1.5em;
 }
-nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
-    list-style: none;
-    font-weight: bold;
-    
-}
+
 
 a {
     text-decoration: none;
@@ -30,9 +24,12 @@ a:hover {
 
 
 nav ul {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
     list-style-type: none;
     margin: 0;
-    padding: 0;
     width: 20%;
     background-color: #f1f1f1;
     position: fixed;
@@ -58,13 +55,7 @@ nav li a:hover:not(.active) {
     color: white;
 }
 
-footer ul li {
-    display: inline;
-    margin-right: 20px;
-    font-size: 1.2em;
-    /* background-color: rgb(255,255,255) */
-    
-}
+
 
 }
 h1 {
@@ -87,16 +78,23 @@ p.plot_title{
 }
 
 footer {
-    margin-left:25%;
+    margin-left:27%;
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
+    position: fixed;
+    display: block;
 }
 
 footer ul{
     align-self: center;
     position: fixed;
 }
-
+footer ul li {
+    display: inline;
+    font-size: 1.2em;
+    /* background-color: rgb(255,255,255) */
+    
+}
 /* tell the container's children to float left: */
 .float_right > * {
     float:left;
